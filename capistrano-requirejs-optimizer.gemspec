@@ -9,13 +9,11 @@ Gem::Specification.new do |gem|
   gem.email         = ["yuki@miketokyo.com", "yuki@smartdrive.co.jp"]
   gem.description   = %q{A capistrano task for r.js optimization.}
   gem.summary       = %q{A capistrano task for r.js optimization.}
-  gem.homepage      = "https://github.com/SmartDriveInc/capistrano-requirejs-optimizer.git"
+  gem.homepage      = "https://github.com/SmartDriveInc/capistrano-requirejs-optimizer"
 
   gem.files         = `git ls-files`.split($/)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'capistrano', '~> 3.1'
-  gem.add_dependency 'capistrano-bundler', '~> 1.1'
-
 end
