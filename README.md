@@ -22,7 +22,7 @@ Add this line to your application's Gemfile.
 
 ```ruby
 gem 'capistrano',  '~> 3.2'
-gem 'capistrano-requirejs-optimizer', :git => 'https://github.com/SmartDriveInc/rjs-recursive.git', :branch => 'master'
+gem 'capistrano-requirejs-optimizer', :git => 'https://github.com/SmartDriveInc/capistrano-requirejs-optimizer.git', :branch => 'master'
 ```
 
 ## Usage
