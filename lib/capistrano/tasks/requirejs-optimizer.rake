@@ -18,8 +18,9 @@ namespace :deploy do
     desc 'Setup rjs-recursive'
     task :executable do
       on release_roles(fetch(:requirejs_optimizer_roles)) do
-        out = execute("if [ -e '#{fetch(:rjs_recursive_working_dir)}/#{fetch(:rjs_recursive_task_name)}' ]; then echo -n 'true'; fi")
-        execute(:pwd, '&&', :cd ,fetch(:rjs_recursive_working_dir), '&&', :git, 'clone', fetch(:rjs_recursive_url)) if out != 'true'
+        if capture("if [ -e '#{fetch(:rjs_recursive_working_dir)}/#{fetch(:rjs_recursive_task_name)}/' ]; then echo -n 'true'; fi").empty?
+          execute(:pwd, '&&', :cd ,fetch(:rjs_recursive_working_dir), '&&', :git, 'clone', fetch(:rjs_recursive_url))
+        end
 
         execute(
           :pwd,
